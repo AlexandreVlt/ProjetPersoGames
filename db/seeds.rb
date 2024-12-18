@@ -9,9 +9,6 @@ response = HTTParty.get(url)
 data = JSON.parse(response.body)
 all_data = data["results"]
 all_data.each do |game|
-  Game.create(name: game["name"], released: game["released"], background_image: game["background_image"], rating: game["rating"], genre: game["genres"][0]["name"])
+  Game.create(rawg_id: game["id"], name: game["name"], released: game["released"], background_image: game["background_image"], rating: game["rating"], genre: game["genres"][0]["name"])
 end
-
-
-
 puts "Finis"

@@ -1,0 +1,9 @@
+<h1 class="text-white font-bold text-2xl p-10 m-10 text-center"><%=@game.name%></h1>
+<div class="flex items-center bg-indigo-400 p-4 rounded-xl">
+  <img src=<%=@game.background_image%> alt="" class="w-64 flex-auto rounded-lg">
+  <div class="text-white w-32 pl-3 font-bold text-start">
+    <p>Genre : <%=@game.genre%></p>
+    <p class="mb-3"><%=@game.rating%> / 5</p>
+    <a href=<%=@url_game%> class=" p-2 bg-indigo-300 rounded-full">Store</a>
+  </div>
+</div>

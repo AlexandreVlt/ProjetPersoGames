@@ -1,5 +1,17 @@
-<h1>Tous les jeux</h1>
-<%@games.each do |game|%>
-  <%=game.name%>
-  <img src=<%=game.background_image%> alt="">
-<% end %>
+<h1 class="font-sans text-2xl p-10 m-10 text-center"> Tous les jeux</h1>
+
+<div class="flex flex-wrap justify-around gap-18">
+  <%@games.each do |game|%>
+    <%= link_to(game_path(game.id)) do %>
+    <div class="w-80 h-96 bg-cover bg-center rounded-lg place-content-end mb-5 shadow-xl transition-transform duration-300 hover:scale-105 " style="background-image: url('<%= game.background_image %>');">
+      <div class="text-center text-sm items-end p-1 font-bold text-white bg-gradient-to-r from-indigo-500/40 via-purple-500/40 to-pink-500/40 rounded-b-lg ">
+        <p><%=game.name%></p>
+        <p><%=game.genre%></p>
+        <p><%=game.rating.to_i%> / 5</p>
+      </div>
+    </div>
+
+    <% end %>
+
+  <% end %>
+</div>
