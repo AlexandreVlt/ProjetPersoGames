@@ -11,14 +11,29 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="bg-gradient-to-r from-sky-700 to-violet-900">
-    <div class="bg-indigo-700 p-10">
-    <%=link_to "Accueil", games_path%>
-    <p>Liste de souhait</p>
+  <body class="bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400">
+    <!-- navbar goes here -->
+  <nav class="bg-white/50 p-10">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex justify-between">
+        <div class="flex space-x-4">
+          <!-- primary nav -->
+          <div class="hidden md:flex items-center space-x-1 gap-10">
+            <%=link_to "Accueil", games_path%>
+            <p>Liste de souhait</p>
+          </div>
+        </div>
+        <!-- secondary nav -->
+        <div class="hidden md:flex items-center space-x-1 gap-10">
+          <%= button_to 'Login', '/auth/auth0', method: :post, data: { turbo: false } %>
+          <%= button_to 'Logout', 'auth/logout', method: :get, data: { turbo: false } %>
+        </div>
+      </div>
     </div>
+  </nav>
     <main class="container mx-auto mt-28 px-5">
       <%= yield %>
     </main>
-    <div class="bg-indigo-700 p-10"></div>
+    <div class="bg-white/50 p-10"></div>
   </body>
 </html>

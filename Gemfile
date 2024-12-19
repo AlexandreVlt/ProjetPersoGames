@@ -11,7 +11,8 @@ gem "dotenv"
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", ">= 1.4"
 gem 'httparty'
-
+gem 'omniauth-auth0', '~> 3.0'
+gem 'omniauth-rails_csrf_protection', '~> 1.0' # prevents forged authentication requests
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 
