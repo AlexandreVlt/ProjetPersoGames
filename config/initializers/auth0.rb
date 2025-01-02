@@ -6,9 +6,13 @@ Rails.application.config.middleware.use OmniAuth::Builder do
     AUTH0_CONFIG['auth0_client_id'],
     AUTH0_CONFIG['auth0_client_secret'],
     AUTH0_CONFIG['auth0_domain'],
-    callback_path: '/auth/auth0/callback',
+    callback_path: AUTH0_CONFIG['auth0_callback_path'],
     authorize_params: {
-      scope: 'openid profile'
+      scope: 'openid profile email'
     }
   )
 end
+
+OmniAuth.config.on_failure = Proc.new { |env|
+  OmniAuth::FailureEndpoint.new(env).redirect_to_failure
+}
