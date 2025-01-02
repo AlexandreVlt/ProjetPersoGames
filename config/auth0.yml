@@ -2,3 +2,4 @@ development:
   auth0_domain: dev-o015czea8epfhew6.us.auth0.com
   auth0_client_id: Y9dPioLwI8F9y89qRYlnAnuMp94HQi1L
   auth0_client_secret: aE8g8tXXmlFHeNDO8CDbDQEYqhKORsBjNdS-J34CYkbYYU0017fnCIaKJo9k2r7B
+  auth0_callback_path: /auth/auth0/callback

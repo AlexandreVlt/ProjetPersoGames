@@ -1,0 +1,14 @@
+<h1>Ma Liste de Souhaits</h1>
+
+<% if @wishgames.any? %>
+  <ul>
+    <% @wishgames.each do |wishgame| %>
+      <li>
+        <%= wishgame.game.name %>
+        <%= link_to 'Retirer', wishgame_path(wishgame), method: :delete, data: { confirm: 'Êtes-vous sûr ?' } %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>Votre liste de souhaits est vide.</p>
+<% end %>
